@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  description: Ensure ntp is installed and configured
+  company: Traveloka
+  min_ansible_version: 2.0
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+
+  categories:
+  - system
+
+dependencies: []

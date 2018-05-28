@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site "https://galaxy.ansible.com/api/v1"
+
+role "ansible-apt_sources_list",
+    git: "git@github.com:traveloka/ansible-apt_sources_list.git",
+    ref: "v1.1.0"

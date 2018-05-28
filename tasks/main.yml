@@ -1,0 +1,26 @@
+---
+# tasks file for ntp
+
+- block:
+    - name: ensure ntp is installed
+      apt:
+        name: ntp
+        cache_valid_time: "{{ apt_cache_valid_time|default(omit) }}"
+        install_recommends: no
+        state: latest
+        update_cache: yes
+
+    - name: ensure ntp configuration is copied
+      template:
+        src: ntp.conf.j2
+        dest: "{{ ntp_conf_file }}"
+      notify: restart ntp
+
+    - name: ensure ntp is running after reboot
+      service:
+        name: "{{ ntp_service_name }}"
+        state: started
+        enabled: yes
+  become: yes
+  tags:
+    - ntp

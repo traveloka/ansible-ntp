@@ -1,0 +1,5 @@
+---
+# vars file for ntp
+
+ntp_conf_file: "/etc/ntp.conf"
+ntp_service_name: "ntp"
